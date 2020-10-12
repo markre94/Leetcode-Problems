@@ -5,7 +5,6 @@ class BinaryTree:
         self.left = None
         self.right = None
 
-
 class Tree:
     def branchSums(self, node):
         # Write your code here.
@@ -40,12 +39,10 @@ class Tree:
         if node.right:
             self.printTree(node.right)
 
-    def nodeDepths(self, node,depth=0):
+    def nodeDepths(self, node, depth=0):
         if node is None:
             return 0
-        return depth + self.nodeDepths(node.left, depth+1) + self.nodeDepths(node.right, depth+1)
-
-
+        return depth + self.nodeDepths(node.left, depth + 1) + self.nodeDepths(node.right, depth + 1)
 
 
 tree = BinaryTree(10)
