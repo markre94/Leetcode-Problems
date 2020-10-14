@@ -43,4 +43,6 @@ if __name__ == '__main__':
     print()
     tree.print_children()
 
-    tree.prettyPrintTree()
+
+
+
