@@ -5,6 +5,7 @@ class BinaryTree:
         self.left = None
         self.right = None
 
+
 class Tree:
     def branchSums(self, node):
         # Write your code here.
@@ -44,6 +45,19 @@ class Tree:
             return 0
         return depth + self.nodeDepths(node.left, depth + 1) + self.nodeDepths(node.right, depth + 1)
 
+    def maximum_depth(self, node):
+
+        if node is None:
+            return 0
+
+        left = self.maximum_depth(node.left)
+        right = self.maximum_depth(node.right)
+
+        if left > right:
+            return left + 1
+        else:
+            return right + 1
+
 
 tree = BinaryTree(10)
 tree.left = BinaryTree(3)
@@ -62,3 +76,5 @@ my_tree.printTree(tree)
 # print(my_tree.branchSums(tree))
 
 print(my_tree.nodeDepths(tree))
+
+print(my_tree.maximum_depth(tree))

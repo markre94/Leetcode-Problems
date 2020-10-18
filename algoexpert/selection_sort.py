@@ -11,19 +11,18 @@
 #
 # print(selectionSort_1(array=[8, 5, 2, 9, 5, 6, 3]))
 
+# Second version with O(0) space complexity
 
 def selectionSort(array):
     # Write your code here.
-    i = 0
-    while i < len(array):
-        smallest = min(array)
-        if array[i] <
-        array[i], array[array.index(smallest)] = array[array.index(smallest)], array[i]
-        i += 1
+    for i in range(len(array)):
+        smallestIdx = i
+        for j in range(i + 1, len(array)):
+            if array[j] < array[smallestIdx]:
+                smallestIdx = j
+        array[i], array[smallestIdx] = array[smallestIdx], array[i]
+
     return array
-
-
-
 
 
 print(selectionSort([8, 5, 2, 9, 5, 6, 3]))
