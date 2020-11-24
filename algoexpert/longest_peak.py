@@ -5,10 +5,10 @@ def longestPeak(array):
         if not check_if_is_peak(array[i-1], array[i], array[i+1]):
             i += 1
             continue
+
         peak_val = 1
-        peak_idx = i
-        left = peak_idx - 1
-        right = peak_idx + 1
+        left = i - 1
+        right = i + 1
 
         while array[left + 1] > array[left] and left >= 0:
             peak_val += 1
