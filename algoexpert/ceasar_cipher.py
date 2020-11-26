@@ -5,17 +5,16 @@ def caesarCipherEncryptor(string, key):
     # Write your code here.
     result_str = ""
     alphabet = [chr(i) for i in range(ord('a'), ord('z') + 1)]
-    x = {}
-    for i in range(len(alphabet)):
-        x[alphabet[i]] = i
 
-    for j in range(len(string)):
+    for i in range(len(string)):
+        idx = alphabet.index(string[i]) + key
+        if idx > 25:
+            new_idx = idx - 26
+            result_str += alphabet[new_idx]
+        else:
+            result_str += alphabet[idx]
 
-        new_idx = x[string[j]] + key
-
-        if new_idx > 25:
-            result_idx = 25 - new_idx
-            result_str +=
+    return result_str
 
 
-print(caesarCipherEncryptor('zbc', 3))
+print(caesarCipherEncryptor('xyz', 2))
