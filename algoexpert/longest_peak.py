@@ -23,7 +23,7 @@ def longestPeak(array):
         if peak_max <= peak_val:
             peak_max = peak_val
 
-        i += 1
+        i = right
     return peak_max
 
 

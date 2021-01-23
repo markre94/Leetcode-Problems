@@ -46,7 +46,6 @@ class Tree:
         return depth + self.nodeDepths(node.left, depth + 1) + self.nodeDepths(node.right, depth + 1)
 
     def maximum_depth(self, node):
-
         if node is None:
             return 0
 
@@ -58,6 +57,11 @@ class Tree:
         else:
             return right + 1
 
+    def nodeDepths(self, node, val=0):
+        if node is None:
+            return 0
+        return 1 + self.nodeDepths(node.left, val+1) + self.nodeDepths(node.right, val+1)
+
 
 tree = BinaryTree(10)
 tree.left = BinaryTree(3)
@@ -66,7 +70,7 @@ tree.right.right = BinaryTree(11)
 tree.right.left = BinaryTree(9)
 
 my_tree = Tree()
-my_tree.printTree(tree)
+
 # print(my_tree.branchSums(tree))
 # my_tree.invert_tree(tree)
 # print()
@@ -77,4 +81,4 @@ my_tree.printTree(tree)
 
 print(my_tree.nodeDepths(tree))
 
-print(my_tree.maximum_depth(tree))
+
